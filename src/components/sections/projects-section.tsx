@@ -53,15 +53,16 @@ function FeaturedProjectCard({ project, index }: { project: Project; index: numb
         <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-amber-300/[0.14] blur-3xl transition group-hover:bg-amber-300/[0.2]" />
         <div className="absolute -left-24 bottom-12 h-64 w-64 rounded-full bg-cyan-300/[0.07] blur-3xl" />
 
-        <div className="relative overflow-hidden rounded-2xl border border-white/[0.1] bg-white/[0.035] p-2 shadow-2xl">
+        <div className="relative max-w-full overflow-hidden rounded-2xl border border-white/[0.1] bg-white/[0.035] p-2 shadow-2xl">
           {imageSrc ? (
-            <div className="relative h-56 overflow-hidden rounded-xl bg-slate-900 sm:h-80">
+            <div className="relative grid max-w-full place-items-center overflow-hidden rounded-xl bg-slate-900">
               <Image
                 src={imageSrc}
                 alt={`${project.name} featured screenshot`}
-                fill
+                width={1700}
+                height={1050}
                 sizes="(min-width: 1024px) 66vw, 100vw"
-                className="object-cover object-left-top brightness-[1.08] contrast-[1.04] transition duration-700 group-hover:scale-[1.025]"
+                className="h-auto w-full max-w-full rounded-xl object-contain object-center brightness-[1.08] contrast-[1.04] transition duration-700 sm:aspect-[16/10]"
                 priority={false}
               />
             </div>
@@ -139,22 +140,23 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       <div className="relative flex h-full min-h-[24rem] flex-col overflow-hidden rounded-3xl border border-white/[0.08] bg-slate-950/52 p-5 backdrop-blur-xl transition duration-300 group-hover:border-white/[0.16] group-hover:bg-white/[0.045] group-hover:shadow-[0_0_54px_rgba(15,23,42,0.45)] sm:min-h-[27rem] sm:p-6">
         <div className={`absolute -right-16 -top-16 h-52 w-52 rounded-full bg-gradient-to-br ${project.accent} opacity-[0.13] blur-3xl transition group-hover:opacity-[0.22]`} />
 
-        <div className="relative mb-6 overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.035] p-2">
+        <div className="relative mb-6 max-w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.035] p-2">
           {isSchoolProCover ? (
             <SchoolProProductCover />
           ) : isBrandCover ? (
             <BrandProjectCover projectName={project.name} />
           ) : imageSrc ? (
-            <div className={isLogoPreview ? "relative h-44 overflow-hidden rounded-xl bg-slate-100" : "relative h-44 overflow-hidden rounded-xl bg-slate-900"}>
+            <div className={isLogoPreview ? "relative grid max-w-full place-items-center overflow-hidden rounded-xl bg-slate-100" : "relative grid max-w-full place-items-center overflow-hidden rounded-xl bg-slate-900"}>
               <Image
                 src={imageSrc}
                 alt={isLogoPreview ? `${project.name} logo` : `${project.name} screenshot`}
-                fill
+                width={1200}
+                height={760}
                 sizes="(min-width: 1024px) 33vw, 100vw"
                 className={
                   isLogoPreview
-                    ? "object-contain brightness-110 contrast-110 transition duration-500 group-hover:scale-[1.03]"
-                    : "object-cover object-left-top brightness-[1.05] transition duration-500 group-hover:scale-[1.03]"
+                    ? "h-auto w-full max-w-full object-contain brightness-110 contrast-110 transition duration-500"
+                    : "h-auto w-full max-w-full rounded-xl object-contain object-center brightness-[1.05] transition duration-500 sm:aspect-[16/10]"
                 }
               />
             </div>

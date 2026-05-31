@@ -214,23 +214,23 @@ export function KiaJourneyShowcase({ screenshots }: { screenshots: ScreenshotIte
                 {visibleScreenshots.map((item) => (
                   <article
                     key={item.title}
-                    className="overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.035] p-2"
+                    className="max-w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.035] p-2"
                   >
                     {item.frame === "confirmation" && item.secondarySrc ? (
-                      <div className="grid min-h-72 gap-3 rounded-xl bg-slate-900/80 p-3 sm:grid-cols-[0.82fr_1.18fr] sm:items-center">
+                      <div className="grid max-w-full gap-3 overflow-hidden rounded-xl bg-slate-900/80 p-3 sm:min-h-72 sm:grid-cols-[0.82fr_1.18fr] sm:items-center">
                         <Image
                           src={item.src!}
                           alt={`${item.title} app screen`}
                           width={720}
                           height={960}
-                          className="mx-auto max-h-80 w-auto rounded-xl object-contain"
+                          className="mx-auto h-auto w-full max-w-xs rounded-xl object-contain sm:max-h-80 sm:w-auto"
                         />
                         <Image
                           src={item.secondarySrc}
                           alt={`${item.title} SMS message`}
                           width={562}
                           height={252}
-                          className="mx-auto w-full max-w-sm rounded-xl object-contain"
+                          className="mx-auto h-auto w-full max-w-sm rounded-xl object-contain"
                         />
                       </div>
                     ) : (
@@ -239,7 +239,7 @@ export function KiaJourneyShowcase({ screenshots }: { screenshots: ScreenshotIte
                         alt={item.title}
                         width={1700}
                         height={1050}
-                        className="aspect-[16/9] w-full rounded-xl object-contain object-left-top brightness-110 contrast-[1.04]"
+                        className="h-auto w-full max-w-full rounded-xl object-contain object-center brightness-110 contrast-[1.04] sm:aspect-[16/9]"
                       />
                     )}
                     <div className="px-2 py-3">

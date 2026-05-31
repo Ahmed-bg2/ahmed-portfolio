@@ -232,7 +232,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </div>
             </div>
 
-            <div className="flex gap-5 overflow-x-auto pb-4 [scrollbar-color:rgba(103,232,249,0.35)_transparent]">
+            <div className="grid gap-5 pb-4 sm:flex sm:overflow-x-auto sm:[scrollbar-color:rgba(103,232,249,0.35)_transparent]">
               {gallery.map((item) => (
                 <ScreenshotCard
                   key={item.title}
@@ -274,13 +274,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </p>
               </div>
 
-              <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-2">
+              <div className="max-w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-2">
                 <Image
                   src={project.aiCenter.image}
                   alt={project.aiCenter.title}
                   width={1500}
                   height={900}
-                  className="h-auto w-full rounded-xl object-cover brightness-110 contrast-[1.04]"
+                  className="h-auto w-full max-w-full rounded-xl object-contain object-center brightness-110 contrast-[1.04]"
                 />
               </div>
             </div>
@@ -336,15 +336,15 @@ function FeaturedScreenshot({
       id={id}
       className={
         isSaas
-          ? "rounded-[1.75rem] border border-cyan-100/20 bg-slate-950/30 p-2.5 shadow-[0_0_80px_rgba(34,211,238,0.16)] backdrop-blur-xl"
-          : "rounded-3xl border border-cyan-200/[0.16] bg-slate-950/45 p-3 shadow-[0_0_70px_rgba(34,211,238,0.12)] backdrop-blur-xl"
+          ? "max-w-full overflow-hidden rounded-[1.75rem] border border-cyan-100/20 bg-slate-950/30 p-2.5 shadow-[0_0_80px_rgba(34,211,238,0.16)] backdrop-blur-xl"
+          : "max-w-full overflow-hidden rounded-3xl border border-cyan-200/[0.16] bg-slate-950/45 p-3 shadow-[0_0_70px_rgba(34,211,238,0.12)] backdrop-blur-xl"
       }
     >
       <div
         className={
           isSaas
-            ? "overflow-hidden rounded-[1.35rem] border border-white/15 bg-slate-900/80 p-1.5"
-            : "overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.035] p-2"
+            ? "grid max-w-full place-items-center overflow-hidden rounded-[1.35rem] border border-white/15 bg-slate-900/80 p-1.5"
+            : "grid max-w-full place-items-center overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.035] p-2"
         }
       >
         {src ? (
@@ -356,8 +356,8 @@ function FeaturedScreenshot({
             priority
             className={
               isSaas
-                ? "aspect-[1915/932] w-full rounded-2xl object-contain brightness-125 contrast-110 saturate-110 transition duration-500 hover:scale-[1.006]"
-                : "h-auto w-full rounded-xl object-cover brightness-110 contrast-[1.04] transition duration-500 hover:scale-[1.012]"
+                ? "h-auto w-full max-w-full rounded-2xl object-contain object-center brightness-125 contrast-110 saturate-110 transition duration-500 sm:aspect-[1915/932]"
+                : "h-auto w-full max-w-full rounded-xl object-contain object-center brightness-110 contrast-[1.04] transition duration-500 sm:aspect-[16/10]"
             }
           />
         ) : (
@@ -385,8 +385,6 @@ function PlatformModuleCard({
   image?: string;
   features: string[];
 }) {
-  const isStudentPortal = title === "Student Portal";
-
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/[0.09] bg-slate-950/48 p-4 shadow-[0_0_55px_rgba(124,58,237,0.08)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-200/25 hover:bg-cyan-100/[0.04] sm:p-5">
       <div className="flex items-start gap-3">
@@ -399,19 +397,16 @@ function PlatformModuleCard({
         </div>
       </div>
 
-      <div className="mt-4 overflow-hidden rounded-2xl border border-white/[0.1] bg-slate-900/80 p-1.5">
+      <div className="mt-4 max-w-full overflow-hidden rounded-2xl border border-white/[0.1] bg-slate-900/80 p-1.5">
         {image ? (
-          <div className="relative aspect-[1915/932] overflow-hidden rounded-xl bg-white">
+          <div className="grid max-w-full place-items-center overflow-hidden rounded-xl bg-white">
             <Image
               src={image}
               alt={title}
-              fill
+              width={1915}
+              height={932}
               sizes="(min-width: 1024px) 44vw, 100vw"
-              className={
-                isStudentPortal
-                  ? "origin-top-left scale-[1.18] object-cover object-left-top brightness-125 contrast-125 saturate-110 transition duration-500 group-hover:scale-[1.2]"
-                  : "object-contain brightness-125 contrast-110 saturate-110 transition duration-500 group-hover:scale-[1.006]"
-              }
+              className="h-auto w-full max-w-full rounded-xl object-contain object-center brightness-125 contrast-110 saturate-110 transition duration-500 sm:aspect-[1915/932]"
             />
           </div>
         ) : (
@@ -443,15 +438,15 @@ function ScreenshotCard({
   src?: string;
 }) {
   return (
-    <article className="group min-w-[20rem] flex-1 rounded-2xl border border-white/[0.08] bg-slate-950/45 p-3 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-200/30 hover:shadow-[0_0_42px_rgba(34,211,238,0.13)] sm:min-w-[25rem] lg:min-w-[18rem]">
-      <div className="overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.035]">
+    <article className="group w-full min-w-0 flex-1 rounded-2xl border border-white/[0.08] bg-slate-950/45 p-3 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-200/30 hover:shadow-[0_0_42px_rgba(34,211,238,0.13)] sm:min-w-[25rem] lg:min-w-[18rem]">
+      <div className="grid max-w-full place-items-center overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.035]">
         {src ? (
           <Image
             src={src}
             alt={title}
             width={1200}
             height={760}
-            className="h-56 w-full object-cover object-left-top brightness-110 contrast-[1.04] transition duration-500 group-hover:scale-[1.025]"
+            className="h-auto w-full max-w-full rounded-xl object-contain object-center brightness-110 contrast-[1.04] transition duration-500 sm:aspect-[16/10]"
           />
         ) : (
           <div className="h-56 bg-cyan-100/[0.06]" />
