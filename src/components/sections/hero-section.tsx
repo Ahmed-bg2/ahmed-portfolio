@@ -57,9 +57,9 @@ export function HeroSection() {
     <section id="home" className="section-shell flex min-h-[100svh] items-center pb-14 pt-24 sm:pb-20 sm:pt-32">
       <div className="mx-auto grid w-full items-center gap-9 sm:gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <motion.div
-          className="max-w-3xl"
+          className="min-w-0 max-w-3xl"
           variants={container}
-          initial="hidden"
+          initial={false}
           animate="show"
         >
           <motion.div
@@ -95,12 +95,12 @@ export function HeroSection() {
             {profile.intro}
           </motion.p>
 
-          <motion.div variants={item} className="mt-6 flex max-w-2xl gap-2.5 overflow-x-auto pb-1 sm:mt-7 sm:flex-wrap sm:overflow-visible sm:pb-0">
+          <motion.div variants={item} className="mt-6 flex max-w-2xl flex-wrap gap-2.5 sm:mt-7">
             {heroHighlights.map((highlight) => (
               <span
                 key={highlight.label}
                 className={[
-                  "shrink-0 rounded-full border px-3.5 py-2 text-xs font-medium backdrop-blur-xl transition",
+                  "rounded-full border px-3.5 py-2 text-xs font-medium backdrop-blur-xl transition",
                   highlight.className
                 ].join(" ")}
               >
@@ -140,8 +140,8 @@ export function HeroSection() {
         </motion.div>
 
         <motion.div
-          className="relative min-h-[19rem] sm:min-h-[28rem] lg:min-h-[34rem]"
-          initial={{ opacity: 0, x: 34, scale: 0.96 }}
+          className="relative min-h-[19rem] min-w-0 overflow-hidden min-[430px]:overflow-visible sm:min-h-[28rem] lg:min-h-[34rem]"
+          initial={false}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
         >

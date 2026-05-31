@@ -67,7 +67,7 @@ export function ContactSection() {
                     key={card.label}
                     href={card.href}
                     target={card.href.startsWith("http") ? "_blank" : undefined}
-                    rel={card.href.startsWith("http") ? "noreferrer" : undefined}
+                    rel={card.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className={[
                       "group flex items-center justify-between gap-4 rounded-2xl border p-4 transition",
                       style.contactCardClassName

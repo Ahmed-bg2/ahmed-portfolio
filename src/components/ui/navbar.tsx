@@ -43,6 +43,22 @@ export function Navbar() {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      return undefined;
+    }
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isMobileMenuOpen]);
+
   return (
     <motion.header
       className="fixed left-0 right-0 top-3 z-50 px-3 sm:top-4 sm:px-4"
@@ -65,12 +81,13 @@ export function Navbar() {
           </span>
         </a>
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={getHref(item.href)}
               className="relative rounded-full px-3 py-2 text-sm text-slate-300 transition hover:text-white lg:px-4"
+              aria-current={isHomePage && activeSection === item.href ? "page" : undefined}
             >
               {isHomePage && activeSection === item.href && (
                 <motion.span
@@ -86,8 +103,9 @@ export function Navbar() {
 
         <button
           type="button"
-          className="grid h-10 w-10 place-items-center rounded-full border border-white/[0.1] bg-white/[0.045] text-slate-100 shadow-[0_0_22px_rgba(125,211,252,0.1)] transition hover:border-cyan-200/35 hover:bg-cyan-200/[0.08] md:hidden"
+          className="grid h-10 w-10 place-items-center rounded-full border border-white/[0.1] bg-white/[0.045] text-slate-100 shadow-[0_0_22px_rgba(125,211,252,0.1)] transition hover:border-cyan-200/35 hover:bg-cyan-200/[0.08] lg:hidden"
           aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-controls="mobile-navigation"
           aria-expanded={isMobileMenuOpen}
           onClick={() => setIsMobileMenuOpen((current) => !current)}
         >
@@ -116,13 +134,16 @@ export function Navbar() {
           </AnimatePresence>
         </button>
 
-        <span className="hidden w-9 md:block" aria-hidden="true" />
+        <span className="hidden w-9 lg:block" aria-hidden="true" />
       </nav>
 
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="glass-panel mx-auto mt-2 max-w-6xl overflow-hidden rounded-[1.5rem] p-2 shadow-[0_26px_70px_rgba(0,0,0,0.42)] md:hidden"
+            id="mobile-navigation"
+            role="navigation"
+            aria-label="Mobile navigation"
+            className="glass-panel mx-auto mt-2 max-w-6xl overflow-hidden rounded-[1.5rem] p-2 shadow-[0_26px_70px_rgba(0,0,0,0.42)] lg:hidden"
             initial={{ opacity: 0, y: -8, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.98 }}
@@ -146,6 +167,7 @@ export function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.025, duration: 0.22 }}
                     onClick={() => setIsMobileMenuOpen(false)}
+                    aria-current={isActive ? "page" : undefined}
                   >
                     {isActive && (
                       <span className="absolute inset-x-3 top-0 h-px bg-gradient-to-r from-transparent via-cyan-100/80 to-transparent" />

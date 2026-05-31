@@ -24,7 +24,7 @@ export function ButtonLink({
     <motion.a
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
-      rel={href.startsWith("http") ? "noreferrer" : undefined}
+      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
       className={[
         "group relative inline-flex h-12 w-full items-center justify-center gap-2 overflow-hidden rounded-full px-5 text-sm font-semibold transition-colors sm:w-auto",
         "focus:outline-none focus:ring-2 focus:ring-sky-200/70 focus:ring-offset-2 focus:ring-offset-ink",

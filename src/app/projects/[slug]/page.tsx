@@ -305,11 +305,11 @@ function CaseStudyButton({
   external?: boolean;
 }) {
   const className = primary
-    ? "inline-flex h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-200 via-sky-300 to-fuchsia-300 px-5 text-sm font-semibold text-slate-950 transition duration-300 hover:scale-[1.02] hover:brightness-110"
-    : "inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/[0.1] bg-white/[0.04] px-5 text-sm font-medium text-slate-200 transition duration-300 hover:scale-[1.02] hover:border-cyan-200/35 hover:bg-cyan-200/[0.08] hover:text-cyan-50";
+    ? "inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-200 via-sky-300 to-fuchsia-300 px-5 text-sm font-semibold text-slate-950 transition duration-300 hover:scale-[1.02] hover:brightness-110 sm:w-auto"
+    : "inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-white/[0.1] bg-white/[0.04] px-5 text-sm font-medium text-slate-200 transition duration-300 hover:scale-[1.02] hover:border-cyan-200/35 hover:bg-cyan-200/[0.08] hover:text-cyan-50 sm:w-auto";
 
   return (
-    <a href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} className={className}>
+    <a href={href} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} className={className}>
       <Icon className="h-4 w-4" aria-hidden="true" />
       {label}
     </a>

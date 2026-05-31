@@ -84,7 +84,7 @@ export const experiences: ExperienceItem[] = [
   {
     role: "Full-Stack Developer Intern",
     company: "SBI",
-    companyFullName: "Sté Belghali Informatique",
+    companyFullName: "Ste Belghali Informatique",
     logoSrc: "/logos/sbi.png",
     logoFit: "cover",
     period: "Jun 2025 - Aug 2025",
@@ -217,8 +217,8 @@ export const projects: Project[] = [
       "Platform for managing KIA Tunisia maintenance appointments through OCR document processing, OTP validation, agency selection and operational dashboards.",
     technologies: ["Python", "Flask", "SQLite", "OCR", "Twilio SMS"],
     accent: "from-teal-300 to-cyan-500",
-    previewImage: "/projects/KIA Appointment Booking System/back.png",
-    cardLogoImage: "/projects/KIA Appointment Booking System/logo.png",
+    previewImage: "/projects/kia/back-office.png",
+    cardLogoImage: "/projects/kia/logo.png",
     coverStyle: "brand",
     status: "Booking system",
     year: "2025",
@@ -231,38 +231,38 @@ export const projects: Project[] = [
       {
         title: "Agency booking flow",
         description: "Interactive agency selection before OCR and appointment reservation.",
-        src: "/projects/KIA Appointment Booking System/Capture d'écran 2026-05-30 235706.png",
+        src: "/projects/kia/agency-selected.png",
         frame: "wide"
       },
       {
         title: "OCR document upload",
         description: "Carte grise and CIN upload flow before extracting client and vehicle data.",
-        src: "/projects/KIA Appointment Booking System/Capture d'écran 2026-05-31 000842.png",
+        src: "/projects/kia/ocr-flow.png",
         frame: "wide"
       },
       {
         title: "Client dashboard",
         description: "Client path for choosing an agency and continuing toward document OCR.",
-        src: "/projects/KIA Appointment Booking System/dashbord.png",
+        src: "/projects/kia/dashboard.png",
         frame: "square"
       },
       {
         title: "OTP and SMS confirmation",
         description: "In-app OTP verification paired with the Twilio SMS received by the client.",
-        src: "/projects/KIA Appointment Booking System/otp.png",
-        secondarySrc: "/projects/KIA Appointment Booking System/sms.png",
+        src: "/projects/kia/otp.png",
+        secondarySrc: "/projects/kia/sms.png",
         frame: "confirmation"
       },
       {
         title: "Back-office dashboard",
         description: "Administrative view for appointments, slots, agencies, and operational metrics.",
-        src: "/projects/KIA Appointment Booking System/back.png",
+        src: "/projects/kia/back-office.png",
         frame: "square"
       },
       {
         title: "Front-office reception",
         description: "Reception dashboard for today's appointments, search, filters, and quick status actions.",
-        src: "/projects/KIA Appointment Booking System/front.png",
+        src: "/projects/kia/front-office.png",
         frame: "square"
       }
     ]

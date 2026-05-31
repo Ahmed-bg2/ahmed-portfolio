@@ -39,7 +39,7 @@ export function HolographicCore() {
   return (
     <motion.div
       className="relative mx-auto aspect-square w-full max-w-[31rem] [perspective:1100px]"
-      initial={{ opacity: 0, scale: 0.92, y: 28 }}
+      initial={false}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
     >

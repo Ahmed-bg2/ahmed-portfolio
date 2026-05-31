@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CustomCursor } from "@/components/ui/custom-cursor";
+import { Footer } from "@/components/ui/footer";
 import { Navbar } from "@/components/ui/navbar";
 import "./globals.css";
 
@@ -29,6 +30,7 @@ export default function RootLayout({
         <CustomCursor />
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

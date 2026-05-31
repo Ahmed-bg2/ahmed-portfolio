@@ -86,7 +86,7 @@ export default async function CertificationPage({ params }: CertificationPagePro
               <a
                 href={certification.credentialUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-200 via-sky-300 to-fuchsia-300 px-5 text-sm font-semibold text-slate-950 transition hover:brightness-110"
               >
                 Open official credential
