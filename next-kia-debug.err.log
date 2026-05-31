@@ -1,0 +1,6 @@
+[Error: EINVAL: invalid argument, readlink 'C:\Users\AHMED\OneDrive - EPISousse\Desktop\Nouveau dossier\.next\server\interception-route-rewrite-manifest.js'] {
+  errno: -4071,
+  code: 'EINVAL',
+  syscall: 'readlink',
+  path: 'C:\\Users\\AHMED\\OneDrive - EPISousse\\Desktop\\Nouveau dossier\\.next\\server\\interception-route-rewrite-manifest.js'
+}

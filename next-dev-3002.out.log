@@ -1,0 +1,21 @@
+
+> ahmed-ben-elghali-portfolio@0.1.0 dev
+> next dev -p 3002
+
+   ▲ Next.js 15.5.18
+   - Local:        http://localhost:3002
+   - Network:      http://192.168.56.1:3002
+
+ ✓ Starting...
+ ✓ Ready in 2.5s
+ ○ Compiling /certifications/[slug] ...
+ ✓ Compiled /certifications/[slug] in 22.4s (1575 modules)
+ ○ Compiling /projects/[slug] ...
+ ✓ Compiled /projects/[slug] in 1161ms (1585 modules)
+ GET /certifications/ccna-introduction-to-networks 200 in 2195ms
+ GET / 200 in 2277ms
+ GET /projects/fixitechpro 200 in 3254ms
+ ✓ Compiled in 2.9s (689 modules)
+ ✓ Compiled in 1670ms (703 modules)
+ ✓ Compiled in 2.7s (703 modules)
+[?25h

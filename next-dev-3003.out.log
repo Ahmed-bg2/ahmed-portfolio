@@ -1,0 +1,22 @@
+
+> ahmed-ben-elghali-portfolio@0.1.0 predev
+> node scripts/clean-next-cache.mjs
+
+
+> ahmed-ben-elghali-portfolio@0.1.0 dev
+> next dev -p 3003
+
+   ▲ Next.js 15.5.18
+   - Local:        http://localhost:3003
+   - Network:      http://192.168.56.1:3003
+
+ ✓ Starting...
+ ✓ Ready in 8.1s
+ ○ Compiling /certifications/[slug] ...
+ ✓ Compiled /certifications/[slug] in 11.5s (1585 modules)
+ GET / 200 in 13558ms
+ GET /certifications/ccna-introduction-to-networks 200 in 13919ms
+ GET /projects/fixitechpro 200 in 15717ms
+ ✓ Compiled in 1822ms (703 modules)
+ ✓ Compiled in 2.4s (703 modules)
+[?25h
