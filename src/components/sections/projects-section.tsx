@@ -24,7 +24,7 @@ export function ProjectsSection() {
       id="projects"
       title="Projects"
     >
-      <div className="grid gap-5 lg:grid-cols-6">
+      <div className="project-card-shell grid w-full max-w-full min-w-0 gap-5 overflow-hidden lg:grid-cols-6">
         {projects.map((project, index) => (
           project.featured ? (
             <FeaturedProjectCard key={project.name} project={project} index={index} />
@@ -42,27 +42,27 @@ function FeaturedProjectCard({ project, index }: { project: Project; index: numb
 
   return (
     <motion.article
-      className="group rounded-3xl p-[1px] lg:col-span-4"
+      className="project-card-shell group w-full max-w-full min-w-0 overflow-hidden rounded-3xl p-[1px] lg:col-span-4"
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.08, duration: 0.6 }}
       whileHover={{ y: -10 }}
     >
-      <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-amber-200/[0.16] bg-slate-950/58 p-4 shadow-[0_0_70px_rgba(245,158,11,0.1)] backdrop-blur-xl transition duration-300 group-hover:border-amber-200/34 group-hover:shadow-[0_0_92px_rgba(245,158,11,0.16)] sm:p-7">
+      <div className="project-card-shell relative flex h-full w-full max-w-full min-w-0 flex-col overflow-hidden rounded-3xl border border-amber-200/[0.16] bg-slate-950/58 p-4 shadow-[0_0_70px_rgba(245,158,11,0.1)] backdrop-blur-xl transition duration-300 group-hover:border-amber-200/34 group-hover:shadow-[0_0_92px_rgba(245,158,11,0.16)] sm:p-7">
         <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-amber-300/[0.14] blur-3xl transition group-hover:bg-amber-300/[0.2]" />
         <div className="absolute -left-24 bottom-12 h-64 w-64 rounded-full bg-cyan-300/[0.07] blur-3xl" />
 
-        <div className="relative max-w-full overflow-hidden rounded-2xl border border-white/[0.1] bg-white/[0.035] p-2 shadow-2xl">
+        <div className="project-image-frame relative w-full max-w-full overflow-hidden rounded-2xl border border-white/[0.1] bg-white/[0.035] p-2 shadow-2xl">
           {imageSrc ? (
-            <div className="relative grid max-w-full place-items-center overflow-hidden rounded-xl bg-slate-900">
+            <div className="project-screenshot-shell relative block w-full max-w-full overflow-hidden rounded-xl bg-slate-900">
               <Image
                 src={imageSrc}
                 alt={`${project.name} featured screenshot`}
                 width={1700}
                 height={1050}
                 sizes="(min-width: 1024px) 66vw, 100vw"
-                className="h-auto w-full max-w-full rounded-xl object-contain object-center brightness-[1.08] contrast-[1.04] transition duration-700 sm:aspect-[16/10]"
+                className="project-screenshot-image block h-full w-full max-w-full rounded-xl object-contain object-center brightness-[1.08] contrast-[1.04] transition duration-700"
                 priority={false}
               />
             </div>
@@ -130,23 +130,23 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
   return (
     <motion.article
-      className="group rounded-3xl p-[1px] lg:col-span-2"
+      className="project-card-shell group w-full max-w-full min-w-0 overflow-hidden rounded-3xl p-[1px] lg:col-span-2"
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.08, duration: 0.6 }}
       whileHover={{ y: -8 }}
     >
-      <div className="relative flex h-full min-h-[24rem] flex-col overflow-hidden rounded-3xl border border-white/[0.08] bg-slate-950/52 p-5 backdrop-blur-xl transition duration-300 group-hover:border-white/[0.16] group-hover:bg-white/[0.045] group-hover:shadow-[0_0_54px_rgba(15,23,42,0.45)] sm:min-h-[27rem] sm:p-6">
+      <div className="project-card-shell relative flex h-full w-full max-w-full min-w-0 flex-col overflow-hidden rounded-3xl border border-white/[0.08] bg-slate-950/52 p-5 backdrop-blur-xl transition duration-300 group-hover:border-white/[0.16] group-hover:bg-white/[0.045] group-hover:shadow-[0_0_54px_rgba(15,23,42,0.45)] sm:min-h-[27rem] sm:p-6">
         <div className={`absolute -right-16 -top-16 h-52 w-52 rounded-full bg-gradient-to-br ${project.accent} opacity-[0.13] blur-3xl transition group-hover:opacity-[0.22]`} />
 
-        <div className="relative mb-6 max-w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.035] p-2">
+        <div className="project-image-frame relative mb-6 w-full max-w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.035] p-2">
           {isSchoolProCover ? (
             <SchoolProProductCover />
           ) : isBrandCover ? (
             <BrandProjectCover projectName={project.name} />
           ) : imageSrc ? (
-            <div className={isLogoPreview ? "relative grid max-w-full place-items-center overflow-hidden rounded-xl bg-slate-100" : "relative grid max-w-full place-items-center overflow-hidden rounded-xl bg-slate-900"}>
+            <div className={isLogoPreview ? "project-screenshot-shell relative block w-full max-w-full overflow-hidden rounded-xl bg-slate-100" : "project-screenshot-shell relative block w-full max-w-full overflow-hidden rounded-xl bg-slate-900"}>
               <Image
                 src={imageSrc}
                 alt={isLogoPreview ? `${project.name} logo` : `${project.name} screenshot`}
@@ -155,8 +155,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 sizes="(min-width: 1024px) 33vw, 100vw"
                 className={
                   isLogoPreview
-                    ? "h-auto w-full max-w-full object-contain brightness-110 contrast-110 transition duration-500"
-                    : "h-auto w-full max-w-full rounded-xl object-contain object-center brightness-[1.05] transition duration-500 sm:aspect-[16/10]"
+                    ? "project-screenshot-image block h-full w-full max-w-full object-contain object-center brightness-110 contrast-110 transition duration-500"
+                    : "project-screenshot-image block h-full w-full max-w-full rounded-xl object-contain object-center brightness-[1.05] transition duration-500"
                 }
               />
             </div>

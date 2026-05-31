@@ -248,6 +248,41 @@ body {
   animation-range: entry 8% cover 34%;
 }
 
+.project-card-shell {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.project-image-frame {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.project-screenshot-shell {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+.project-screenshot-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  margin: 0;
+  transform: none;
+}
+
 @keyframes spinSlow {
   to {
     transform: rotate(360deg);
@@ -305,5 +340,34 @@ body {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-card-shell,
+  .project-image-frame,
+  .project-screenshot-shell {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .project-screenshot-shell {
+    aspect-ratio: 16 / 10;
+    display: block;
+    position: relative;
+  }
+
+  .project-screenshot-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    margin: 0;
+    transform: none !important;
+    scale: 1;
   }
 }
