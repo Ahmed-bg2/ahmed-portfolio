@@ -26,7 +26,7 @@ export function ButtonLink({
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noreferrer" : undefined}
       className={[
-        "group relative inline-flex h-12 items-center justify-center gap-2 overflow-hidden rounded-full px-5 text-sm font-semibold transition-colors",
+        "group relative inline-flex h-12 w-full items-center justify-center gap-2 overflow-hidden rounded-full px-5 text-sm font-semibold transition-colors sm:w-auto",
         "focus:outline-none focus:ring-2 focus:ring-sky-200/70 focus:ring-offset-2 focus:ring-offset-ink",
         isPrimary
           ? "bg-gradient-to-r from-sky-200 via-emerald-200 to-pink-200 text-slate-950 shadow-glow hover:brightness-110"

@@ -134,7 +134,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <main className="relative min-h-screen overflow-hidden bg-ink text-white">
       <AnimatedBackground />
-      <section className="section-shell relative z-10 py-10 sm:py-14">
+      <section className="section-shell relative z-10 pb-10 pt-24 sm:pb-14 sm:pt-28">
         <Link
           href="/#projects"
           className="inline-flex items-center gap-2 rounded-full border border-white/[0.1] bg-white/[0.04] px-4 py-2 text-sm text-slate-300 transition hover:border-cyan-200/35 hover:text-cyan-100"

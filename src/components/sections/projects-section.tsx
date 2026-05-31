@@ -49,13 +49,13 @@ function FeaturedProjectCard({ project, index }: { project: Project; index: numb
       transition={{ delay: index * 0.08, duration: 0.6 }}
       whileHover={{ y: -10 }}
     >
-      <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-amber-200/[0.16] bg-slate-950/58 p-5 shadow-[0_0_70px_rgba(245,158,11,0.1)] backdrop-blur-xl transition duration-300 group-hover:border-amber-200/34 group-hover:shadow-[0_0_92px_rgba(245,158,11,0.16)] sm:p-7">
+      <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-amber-200/[0.16] bg-slate-950/58 p-4 shadow-[0_0_70px_rgba(245,158,11,0.1)] backdrop-blur-xl transition duration-300 group-hover:border-amber-200/34 group-hover:shadow-[0_0_92px_rgba(245,158,11,0.16)] sm:p-7">
         <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-amber-300/[0.14] blur-3xl transition group-hover:bg-amber-300/[0.2]" />
         <div className="absolute -left-24 bottom-12 h-64 w-64 rounded-full bg-cyan-300/[0.07] blur-3xl" />
 
         <div className="relative overflow-hidden rounded-2xl border border-white/[0.1] bg-white/[0.035] p-2 shadow-2xl">
           {imageSrc ? (
-            <div className="relative h-72 overflow-hidden rounded-xl bg-slate-900 sm:h-80">
+            <div className="relative h-56 overflow-hidden rounded-xl bg-slate-900 sm:h-80">
               <Image
                 src={imageSrc}
                 alt={`${project.name} featured screenshot`}
@@ -79,7 +79,7 @@ function FeaturedProjectCard({ project, index }: { project: Project; index: numb
               <Layers3 className="h-3.5 w-3.5" aria-hidden="true" />
               SaaS product case study
             </div>
-            <h3 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            <h3 className="text-2xl font-semibold tracking-tight text-white sm:text-4xl">
               {project.name}
             </h3>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
@@ -136,8 +136,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       transition={{ delay: index * 0.08, duration: 0.6 }}
       whileHover={{ y: -8 }}
     >
-      <div className="relative flex h-full min-h-[27rem] flex-col overflow-hidden rounded-3xl border border-white/[0.08] bg-slate-950/52 p-6 backdrop-blur-xl transition duration-300 group-hover:border-white/[0.16] group-hover:bg-white/[0.045] group-hover:shadow-[0_0_54px_rgba(15,23,42,0.45)]">
-        <div className={`absolute -right-16 -top-16 h-52 w-52 rounded-full bg-gradient-to-br ${project.accent} opacity-13 blur-3xl transition group-hover:opacity-22`} />
+      <div className="relative flex h-full min-h-[24rem] flex-col overflow-hidden rounded-3xl border border-white/[0.08] bg-slate-950/52 p-5 backdrop-blur-xl transition duration-300 group-hover:border-white/[0.16] group-hover:bg-white/[0.045] group-hover:shadow-[0_0_54px_rgba(15,23,42,0.45)] sm:min-h-[27rem] sm:p-6">
+        <div className={`absolute -right-16 -top-16 h-52 w-52 rounded-full bg-gradient-to-br ${project.accent} opacity-[0.13] blur-3xl transition group-hover:opacity-[0.22]`} />
 
         <div className="relative mb-6 overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.035] p-2">
           {isSchoolProCover ? (
@@ -169,7 +169,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               <Layers3 className="h-3.5 w-3.5" aria-hidden="true" />
               Platform
             </div>
-            <h3 className="text-2xl font-semibold tracking-tight text-white">{project.name}</h3>
+            <h3 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">{project.name}</h3>
           </div>
           <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-white/60 transition group-hover:border-cyan-200/30 group-hover:text-cyan-100">
             <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

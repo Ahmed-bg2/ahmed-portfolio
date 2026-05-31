@@ -49,7 +49,7 @@ export function AboutSection() {
       <SectionTitle title="About" />
       <div className="grid items-stretch gap-5 lg:grid-cols-[0.96fr_1.04fr] xl:grid-cols-[0.9fr_1.1fr]">
         <motion.article
-          className="glass-panel relative flex min-h-[28rem] flex-col overflow-hidden rounded-3xl border-white/[0.18] p-6 shadow-[0_34px_110px_rgba(0,0,0,0.58)] sm:min-h-[30rem] sm:p-8 lg:min-h-[34rem]"
+          className="glass-panel relative flex min-h-[24rem] flex-col overflow-hidden rounded-3xl border-white/[0.18] p-5 shadow-[0_34px_110px_rgba(0,0,0,0.58)] sm:min-h-[30rem] sm:p-8 lg:min-h-[34rem]"
           initial={{ opacity: 0, y: 26 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -64,7 +64,7 @@ export function AboutSection() {
               <p className="text-sm font-semibold uppercase tracking-[0.26em] text-cyan-100/85">
                 Profile
               </p>
-              <p className="mt-5 text-base leading-8 text-white/76 sm:text-lg sm:leading-9">
+              <p className="mt-5 text-sm leading-7 text-white/76 sm:text-lg sm:leading-9">
                 I am a Computer Engineering student focused on building real-world digital
                 products. I enjoy turning ideas into clean, useful, and scalable systems,
                 with a growing interest in Artificial Intelligence and intelligent software
@@ -104,7 +104,7 @@ export function AboutSection() {
 function ProfilePhotoCard() {
   return (
     <motion.article
-      className="relative min-h-[30rem] overflow-hidden rounded-3xl border border-white/[0.12] bg-slate-950/45 p-3 shadow-[0_34px_110px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:min-h-[32rem] lg:min-h-[34rem]"
+      className="relative min-h-[24rem] overflow-hidden rounded-3xl border border-white/[0.12] bg-slate-950/45 p-3 shadow-[0_34px_110px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:min-h-[32rem] lg:min-h-[34rem]"
       initial={{ opacity: 0, y: 26 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

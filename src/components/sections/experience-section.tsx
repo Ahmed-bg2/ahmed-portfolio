@@ -16,7 +16,7 @@ export function ExperienceSection() {
         {experiences.map((experience, index) => (
           <motion.article
             key={experience.title}
-            className="relative grid gap-6 pb-8 md:grid-cols-2"
+            className="relative grid gap-6 pb-8 pl-9 md:grid-cols-2 md:pl-0"
             initial={{ opacity: 0, y: 26 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
